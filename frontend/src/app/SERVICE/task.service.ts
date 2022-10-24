@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class TarefaService {
+export class TaskService {
   url = 'http://localhost:8080/api/tarefas';
 
   constructor(private http: HttpClient) {}
