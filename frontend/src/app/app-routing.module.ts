@@ -7,7 +7,7 @@ import { StartComponent } from './COMPONENTS/start/start.component';
 const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
   { path: 'start', component: StartComponent },
-  { path: 'edit', component: EditComponent },
+  { path: 'edit/:id', component: EditComponent },
   { path: 'add', component: AddComponent },
 ];
 

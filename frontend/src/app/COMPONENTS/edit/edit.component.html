@@ -1,1 +1,14 @@
-<p>edit works!</p>
+<div class="container">
+  <label for="task">Tarefa</label>
+  <input type="text" id="task" name="task" [(ngModel)]="currentTask.task" />
+  <br />
+  <label for="state">Estado</label>
+  <input
+    type="checkbox"
+    name="state"
+    id="state"
+    [(ngModel)]="currentTask.done"
+  />
+
+  <button class="btn btn-primary" (click)="saveChanges()">Salvar</button>
+</div>
