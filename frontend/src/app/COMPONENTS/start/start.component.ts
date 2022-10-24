@@ -23,4 +23,14 @@ export class StartComponent implements OnInit {
       (err) => console.log(err)
     );
   }
+
+  delete(id: string) {
+    this.taskService.deleteTask(id).subscribe(
+      (res) => {
+        // restart page
+        this.ngOnInit();
+      },
+      (err) => console.log(err)
+    );
+  }
 }

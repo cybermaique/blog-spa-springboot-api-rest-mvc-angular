@@ -1,22 +1,34 @@
 <div class="container">
-    <button class="btn btn-primary" [routerLink]="['/adicionar']" routerLinkActive="router-link-active" >Adicionar</button>
+  <button
+    class="btn btn-primary"
+    [routerLink]="['/add']"
+    routerLinkActive="router-link-active"
+  >
+    Adicionar
+  </button>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Id</th>
-        <th scope="col">Tarefa</th>
+        <th scope="col">Nome</th>
         <th scope="col">Concluida</th>
         <th>#</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tarefa of list">
-        <td>{{ tarefa.id }}</td>
-        <td>{{ tarefa.tarefa }}</td>
-        <td>{{ tarefa.concluida }}</td>
+      <tr *ngFor="let task of list">
+        <td>{{ task.id }}</td>
+        <td>{{ task.task }}</td>
+        <td>{{ task.done == false ? "Não" : "Sim" }}</td>
         <td>
-            <button class="btn btn-danger">Excluir</button>
-            <button class="btn btn-warning" [routerLink]="['/editar',tarefa.id]" routerLinkActive="router-link-active" >Editar</button>
+          <button class="btn btn-danger" (click)="delete(task.id)">Excluir</button>
+          <button
+            class="btn btn-warning"
+            [routerLink]="['/editar', task.id]"
+            routerLinkActive="router-link-active"
+          >
+            Editar
+          </button>
         </td>
       </tr>
     </tbody>

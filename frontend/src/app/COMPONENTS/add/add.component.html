@@ -1,1 +1,11 @@
-<p>add works!</p>
+<div class="container">
+  <form action="">
+    <label for="task">Nome</label>
+    <input type="text" id="task" name="task" [(ngModel)]="newTask.task" />
+    <br />
+    <label for="state">Estado</label>
+    <input type="checkbox" name="state" id="state" [(ngModel)]="newTask.done" />
+    <br />
+    <button class="btn btn-primary" (click)="addTask()">Adicionar</button>
+  </form>
+</div>
