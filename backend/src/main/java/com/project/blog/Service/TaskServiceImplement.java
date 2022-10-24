@@ -5,40 +5,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.project.blog.Dao.TarefaDao;
-import com.project.blog.Model.Tarefa;
+import com.project.blog.Dao.TaskDao;
+import com.project.blog.Model.Task;
 
 @Service
-public class TarefaServiceImplement  implements TarefaService{
+public class TaskServiceImplement  implements TaskService{
     @Autowired
-    private TarefaDao TarefaDao;
+    private TaskDao TaskDao;
     
     @Override
     @Transactional(readOnly=true)
-    public List<Tarefa> findAll()
+    public List<Task> findAll()
     {
-        return (List<Tarefa>) TarefaDao.findAll();
+        return (List<Task>) TaskDao.findAll();
     }
     
     @Override
      @Transactional(readOnly=false)
-    public Tarefa save(Tarefa Tarefa)
+    public Task save(Task Task)
     {
-        return TarefaDao.save(Tarefa);
+        return TaskDao.save(Task);
     }
     
     @Override
      @Transactional(readOnly=true)
-    public Tarefa findById(Integer id)
+    public Task findById(Integer id)
     {
-        return TarefaDao.findById(id).orElse(null);
+        return TaskDao.findById(id).orElse(null);
     }
     
     @Override
      @Transactional(readOnly=false)
     public void delete(Integer id)
     {
-        TarefaDao.deleteById(id);
+        TaskDao.deleteById(id);
     }
     
 }

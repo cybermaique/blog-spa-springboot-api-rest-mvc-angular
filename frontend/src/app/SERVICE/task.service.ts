@@ -18,12 +18,12 @@ export class TaskService {
     return this.http.get(this.url + '/' + id);
   }
 
-  saveTask(tarefa: Tarefa): Observable<any> {
-    return this.http.post(this.url, tarefa);
+  saveTask(task: Task): Observable<any> {
+    return this.http.post(this.url, task);
   }
 
-  editTask(id: string, tarefa: Tarefa): Observable<any> {
-    return this.http.put(this.url + '/' + id, tarefa);
+  editTask(id: string, task: Task): Observable<any> {
+    return this.http.put(this.url + '/' + id, task);
   }
 
   deleteTask(id: string): Observable<any> {
@@ -32,8 +32,8 @@ export class TaskService {
 }
 
 //db data
-export interface Tarefa {
+export interface Task {
   id: string;
-  tarefa: string;
-  concluida: boolean;
+  task: string;
+  done: boolean;
 }

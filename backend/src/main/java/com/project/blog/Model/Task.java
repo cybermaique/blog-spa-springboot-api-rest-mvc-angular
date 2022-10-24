@@ -8,18 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_tarefa")
-public class Tarefa {
+@Table(name="tb_task")
+public class Task {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="Id")
     private Integer Id;
     
-    @Column(name="Tarefa")
-    private String Tarefa;
+    @Column(name="Task")
+    private String Task;
     
-    @Column(name="Concluida")
-    private Boolean Concluida;
+    @Column(name="Done")
+    private Boolean Done;
 
     public Integer getId() {
         return Id;
@@ -29,20 +29,20 @@ public class Tarefa {
         this.Id = Id;
     }
 
-    public String getTarefa() {
-        return Tarefa;
+    public String getTask() {
+        return Task;
     }
 
-    public void setTarefa(String Tarefa) {
-        this.Tarefa = Tarefa;
+    public void setTask(String Task) {
+        this.Task = Task;
     }
 
-    public Boolean getConcluida() {
-        return Concluida;
+    public Boolean getDone() {
+        return Done;
     }
 
-    public void setConcluida(Boolean Concluida) {
-        this.Concluida = Concluida;
+    public void setDone(Boolean Done) {
+        this.Done = Done;
     }
     
 }
